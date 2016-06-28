@@ -1,5 +1,6 @@
 package game;
 
+import gui.GateButton;
 
 public class WarpGate extends Actor {
 	boolean active = false;

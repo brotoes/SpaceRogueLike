@@ -1,5 +1,6 @@
-package game;
+package remotes;
 
+import game.Ship;
 import javafx.geometry.Point2D;
 import javafx.scene.transform.Rotate;
 
@@ -29,16 +30,16 @@ public abstract class ShipRemote {
 		braking = state;
 	}
 	
-	double getDesiredTheta() {
+	public double getDesiredTheta() {
 		Point2D dir = this.getDesiredDirection();
 		return Math.atan2(dir.getY(), dir.getX());
 	}
 	
-	Point2D getDesiredDirection() {
+	public Point2D getDesiredDirection() {
 		return new Point2D(1.0, 0.0);
 	}
 
-	Point2D getDesiredThrustVector() {
+	public Point2D getDesiredThrustVector() {
 		Point2D v = new Point2D(0.0, 0.0);
 		
 		/* Check if braking */
@@ -49,7 +50,7 @@ public abstract class ShipRemote {
 		return v;
 	}
 	
-	Point2D getBrakingVector() {
+	public Point2D getBrakingVector() {
 		Point2D v = host.getV().multiply(-1);
 		Rotate rotate = new Rotate(Math.toDegrees(-host.getTheta()));
 		v = rotate.transform(v);

@@ -1,5 +1,6 @@
-package game;
+package remotes;
 
+import game.Ship;
 import javafx.geometry.Point2D;
 
 public class EnemyShip extends StillShooter {

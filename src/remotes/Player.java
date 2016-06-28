@@ -1,5 +1,7 @@
-package game;
+package remotes;
 
+import game.Game;
+import game.Ship;
 import javafx.geometry.Point2D;
 
 public class Player extends ShipRemote {

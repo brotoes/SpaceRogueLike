@@ -1,11 +1,12 @@
-package game;
+package gui;
 
+import game.FuelPlatform;
 import javafx.event.ActionEvent;
 
 public class FuelButton extends ActorButton {
 	String[] texts = {"Fuel Up", "Stop"};
 	
-	FuelButton(FuelPlatform host) {
+	public FuelButton(FuelPlatform host) {
 		super(host);
 		button.setText(texts[0]);
 	}
@@ -15,9 +16,9 @@ public class FuelButton extends ActorButton {
 	 */
 	@Override
 	public void handle(ActionEvent event) {
-		((FuelPlatform)host).fuelling = !((FuelPlatform)host).fuelling;
+		((FuelPlatform)host).setFuelling(!((FuelPlatform)host).isFuelling());
 		
-		if (((FuelPlatform)host).fuelling) {
+		if (((FuelPlatform)host).isFuelling()) {
 			button.setText(texts[1]);
 		} else {
 			button.setText(texts[0]);

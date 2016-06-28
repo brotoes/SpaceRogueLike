@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import org.w3c.dom.*;
 import utils.FileUtils;
 import javafx.scene.transform.Affine;
+import remotes.ShipRemote;
 import javafx.geometry.Point2D;
 
 public class Ship extends Actor {

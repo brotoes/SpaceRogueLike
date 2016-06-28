@@ -1,9 +1,11 @@
-package game;
+package gui;
 
+import game.Game;
+import game.WarpGate;
 import javafx.event.ActionEvent;
 
 public class GateButton extends ActorButton {	
-	GateButton(WarpGate host) {
+	public GateButton(WarpGate host) {
 		super(host);
 		button.setText("Warp");
 	}

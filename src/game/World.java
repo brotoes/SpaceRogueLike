@@ -2,6 +2,8 @@ package game;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import remotes.Player;
+
 import java.util.ArrayList;
 
 public class World {

@@ -1,5 +1,7 @@
-package game;
+package gui;
 
+import game.Game;
+import game.World;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 

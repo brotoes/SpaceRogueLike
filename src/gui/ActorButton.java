@@ -1,4 +1,4 @@
-package game;
+package gui;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.canvas.Canvas;
@@ -6,6 +6,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.shape.ArcType;
 import javafx.geometry.Point2D;
 import javafx.event.EventHandler;
+import game.Actor;
+import game.Game;
 import javafx.event.ActionEvent;
 import javafx.scene.effect.Glow;
 

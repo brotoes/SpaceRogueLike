@@ -2,6 +2,8 @@ package game;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
+import remotes.Player;
+
 import static javafx.scene.input.KeyEvent.*;
 
 public class KeyHandler implements EventHandler<KeyEvent> {

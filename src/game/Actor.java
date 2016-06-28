@@ -230,18 +230,18 @@ public abstract class Actor {
 		return getDirectionToPoint(actor.getPos());
 	}
 	
-	protected void faceCursor() {
+	public void faceCursor() {
 		Point2D newDir = this.getDirectionToMouse();
 		if (newDir != null) {
 			this.dir = newDir;
 		}
 	}
 	
-	protected Point2D getDirectionToMouse() {	
+	public Point2D getDirectionToMouse() {	
 		return getDirectionToPoint(Game.screen.getCamMousePos());
 	}
 	
-	protected Point2D getDirectionToPoint(Point2D point) {
+	public Point2D getDirectionToPoint(Point2D point) {
 		return point.subtract(pos).normalize();
 	}
 	

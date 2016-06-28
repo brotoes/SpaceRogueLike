@@ -1,11 +1,13 @@
 package game;
 
+import gui.FuelButton;
+
 public class FuelPlatform extends Actor {
-	double fuelRate = 50;
-	double fuelDistance = 150.0;
-	boolean fuelling = false;
-	boolean fuelPossible = false;
-	FuelButton button;
+	private double fuelRate = 50;
+	private double fuelDistance = 150.0;
+	private boolean fuelling = false;
+	private boolean fuelPossible = false;
+	private FuelButton button;
 	
 	public FuelPlatform(double x, double y) {
 		super(x, y, "fuelPlatform");
@@ -14,6 +16,14 @@ public class FuelPlatform extends Actor {
 		
 		sprite.addFrame("fuelPlatformActive");
 		sprite.pause();
+	}
+	
+	public void setFuelling(boolean state) {
+		fuelling = state;
+	}
+	
+	public boolean isFuelling() {
+		return fuelling;
 	}
 	
 	@Override
