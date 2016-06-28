@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thruster>
+	<info>
+		<name>Basic Main Thruster</name>
+		<type>main</type>
+		<sprite>jetBlue</sprite>
+		<mass>1.0</mass>
+		<thrust>0.08</thrust>
+		<efficiency>1.5</efficiency>
+	</info>
+</thruster>

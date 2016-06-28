@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hull>
+	<info>
+		<name>BasicHull</name>
+		<sprite>bigShip</sprite>
+		<scale>5.0</scale>
+		<mass>100.0</mass>
+		<hp>50.0</hp>
+		<rotSpeed>0.01</rotSpeed>
+	</info>
+	<shape>
+		<row>000111111110</row>
+		<row>000111111110</row>
+		<row>000111111110</row>
+		<row>111111111111</row>
+		<row>111111111111</row>
+		<row>111111111111</row>
+		<row>000111111110</row>
+		<row>000111111110</row>
+		<row>000111111110</row>
+	</shape>
+	<slots>
+		<thrusters>
+			<thruster>
+				<type>main</type>
+				<vector>1.0, 0.0</vector>
+				<offset>-28,-5</offset>
+			</thruster>
+			<thruster>
+				<type>main</type>
+				<vector>1.0, 0.0</vector>
+				<offset>-28,5</offset>
+			</thruster>
+			<thruster>
+				<type>maneuver</type>
+				<vector>0.0, -1.0</vector>
+				<offset>-10,-12</offset>
+			</thruster>
+			<thruster>
+				<type>maneuver</type>
+				<vector>0.0, -1.0</vector>
+				<offset>-3,10</offset>
+			</thruster>
+			<thruster>
+				<type>maneuver</type>
+				<vector>-1.0, 0.0</vector>
+				<offset>-26,0</offset>
+			</thruster>
+			<thruster>
+				<type>maneuver</type>
+				<vector>0.0, 1.0</vector>
+				<offset>-10,12</offset>
+			</thruster>
+			<thruster>
+				<type>maneuver</type>
+				<vector>0.0, 1.0</vector>
+				<offset>-3,-10</offset>
+			</thruster>
+		</thrusters>
+	</slots>
+</hull>

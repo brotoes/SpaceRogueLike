@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane stylesheets="@main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.MainMenuController">
+   <top>
+      <Label text="Game Title" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <FlowPane orientation="VERTICAL" prefHeight="200.0" prefWidth="150.0" vgap="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#newGame" styleClass="vFlowButton" text="New Game" />
+            <Button mnemonicParsing="false" styleClass="vFlowButton" text="Load Game" />
+            <Button mnemonicParsing="false" styleClass="vFlowButton" text="Options" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </FlowPane>
+   </left>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</BorderPane>

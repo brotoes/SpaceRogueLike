@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hull>
+	<info>
+		<name>BasicHull</name>
+		<sprite>ship</sprite>
+		<mass>10.0</mass>
+		<hp>20.0</hp>
+	</info>
+	<shape>
+		<row>000111111110</row>
+		<row>000111111110</row>
+		<row>000111111110</row>
+		<row>111111111111</row>
+		<row>111111111111</row>
+		<row>111111111111</row>
+		<row>000111111110</row>
+		<row>000111111110</row>
+		<row>000111111110</row>
+	</shape>
+	<slots>
+		<thrusters>
+			<thruster>
+				<type>main</type>
+				<vector>1, 0</vector>
+				<offset>-20, 0</offset>
+			</thruster>
+			<thruster>
+				<type>maneuver</type>
+				<vector>0, -1</vector>
+				<offset>0, 15</offset>
+			</thruster>
+			<thruster>
+				<type>maneuver</type>
+				<vector>-1, 0</vector>
+				<offset>20, 0</offset>
+			</thruster>
+			<thruster>
+				<type>maneuver</type>
+				<vector>0, 1</vector>
+				<offset>0, -15</offset>
+			</thruster>
+		</thrusters>
+	</slots>
+</hull>

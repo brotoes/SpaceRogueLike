@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shipConfiguration>
+	<general>
+		<name>Big Ship</name>
+		<hull>BigHull</hull>
+	</general>
+	<slots>
+		<thrusters>
+			<thruster>BasicMainThruster</thruster>
+			<thruster>BasicMainThruster</thruster>
+			<thruster>BasicManeuverThruster</thruster>
+			<thruster>BasicManeuverThruster</thruster>
+			<thruster>BasicManeuverThruster</thruster>
+			<thruster>BasicManeuverThruster</thruster>
+			<thruster>BasicManeuverThruster</thruster>
+		</thrusters>
+	</slots>
+	<equipment>
+		<fuelTank>
+			<name>BasicFuelTank</name>
+			<pos>0,0</pos>
+		</fuelTank>
+		<reactor>
+			<name>BasicReactor</name>
+			<pos>5,5</pos>
+		</reactor>
+		<shieldGenerator>
+			<name>BasicShieldGenerator</name>
+			<pos>0,5</pos>
+		</shieldGenerator>
+	</equipment>
+</shipConfiguration>

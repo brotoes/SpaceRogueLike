@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shieldGenerator>
+	<info>
+		<name>Basic Shield Generator</name>
+		<sprite>fuelTank</sprite>
+		<mass>1.5</mass>
+		<rate>0.001</rate>
+		<chargeCost>5000.0</chargeCost>
+		<strength>10.0</strength>
+	</info>
+	<shape>
+		<row>010</row>
+		<row>111</row>
+		<row>111</row>
+	</shape>
+</shieldGenerator>

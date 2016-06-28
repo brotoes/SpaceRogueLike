@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sprite>
+	<frames>
+		<frame>animJet_1</frame>
+		<frame>animJet_2</frame>
+		<frame>animJet_3</frame>
+		<frame>animJet_4</frame>
+		<frame>animJet_5</frame>
+		<frame>animJet_6</frame>
+	</frames>
+</sprite>

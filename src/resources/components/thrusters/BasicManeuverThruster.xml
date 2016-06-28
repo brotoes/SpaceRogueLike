@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thruster>
+	<info>
+		<name>Basic Maneuver Thruster</name>
+		<type>maneuver</type>
+		<sprite>jet</sprite>
+		<mass>0.5</mass>
+		<thrust>0.05</thrust>
+		<efficiency>0.7</efficiency>
+	</info>
+</thruster>

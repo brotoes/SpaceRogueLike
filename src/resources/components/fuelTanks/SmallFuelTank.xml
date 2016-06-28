@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fuelTank>
+	<info>
+		<name>Small Fuel Tank</name>
+		<sprite>fuelTank</sprite>
+		<mass>2.0</mass>
+		<capacity>2500.0</capacity>
+	</info>
+	<shape>
+		<row>1111</row>
+		<row>1111</row>
+	</shape>
+</fuelTank>
