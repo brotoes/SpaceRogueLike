@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system>
+	<info>
+		<name>Sol2</name>
+	</info>
+	<bodies><star>
+			<name>Sun</name>
+			<color>yellow</color>
+			<secondaryColor>orange</secondaryColor>
+			<size>6963</size>
+		</star><planet>
+			<name>Earth</name>
+			<color>green</color>
+			<secondaryColor>blue</secondaryColor>
+			<sprite>earth</sprite>
+			<size>637</size>
+			<atmosphere>white</atmosphere>
+		</planet></bodies>
+</system>

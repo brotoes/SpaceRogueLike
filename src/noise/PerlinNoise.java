@@ -1,8 +1,9 @@
-package game;
+package noise;
 
 import java.util.Random;
-import java.awt.image.BufferedImage;
-import java.awt.Color;
+import javafx.scene.image.PixelWriter;
+import javafx.scene.image.WritableImage;
+import javafx.scene.paint.Color;
 
 public class PerlinNoise {
 	   // Just a Random class object so I can fill my noise map with random directions.
@@ -39,7 +40,7 @@ public class PerlinNoise {
 	      
 	   }
 
-	   public float noise(float x, float y) {
+	   public double noise(double x, double y) {
 
 	      // Grid cell coordinates in integer values.
 	      int gx0 = (int) (Math.floor(x)); // Top-Left
@@ -60,19 +61,19 @@ public class PerlinNoise {
 	      vec2 delta01 = new vec2(x - gx0, y - gy1); // Down-Left
 
 	      // Compute a dot product between random directions and corresponding delta values.
-	      float s = dot(g00, new vec2(delta00.x, delta00.y)); // Top-Left
-	      float t = dot(g10, new vec2(delta10.x, delta10.y)); // Top-Right
-	      float u = dot(g11, new vec2(delta11.x, delta11.y)); // Down-Right
-	      float v = dot(g01, new vec2(delta01.x, delta01.y)); // Down-Left
+	      double s = dot(g00, new vec2(delta00.x, delta00.y)); // Top-Left
+	      double t = dot(g10, new vec2(delta10.x, delta10.y)); // Top-Right
+	      double u = dot(g11, new vec2(delta11.x, delta11.y)); // Down-Right
+	      double v = dot(g01, new vec2(delta01.x, delta01.y)); // Down-Left
 
 	      // Compute the weights for x and y axis.
-	      float sx = weigh(delta00.x);
-	      float sy = weigh(delta00.y);
+	      double sx = weigh(delta00.x);
+	      double sy = weigh(delta00.y);
 	      
 	      // Interpolate between values.
-	      float a = lerp(sy, s, v); // Interpolate Top-Left(s) and Down-Left(v). We can also call this LEFT
-	      float b = lerp(sy, t, u); // Interpolate Top-Right(t) and Down-Right(u) We can also call this RIGHT
-	      float h = lerp(sx, a, b); // Interpolate LEFT(a) and RIGHT(b). We can call this height(h)
+	      double a = lerp(sy, s, v); // Interpolate Top-Left(s) and Down-Left(v). We can also call this LEFT
+	      double b = lerp(sy, t, u); // Interpolate Top-Right(t) and Down-Right(u) We can also call this RIGHT
+	      double h = lerp(sx, a, b); // Interpolate LEFT(a) and RIGHT(b). We can call this height(h)
 	      
 	      h *= 4; // Multiply here so adjust contrast.
 	      
@@ -87,15 +88,15 @@ public class PerlinNoise {
 	    * Computes a weight using S-curve function f(x) = 3 * (x * x) - 2 * (x * x * x).
 	    * @param x NOT as in axis, but as a variable.
 	    */
-	   private float weigh(float x) {
+	   private double weigh(double x) {
 	      return 3 * (x * x) - 2 * (x * x * x);
 	   }
 	   
 	   /**
 	    * Interpolate between 2 values, using weight.
 	    */
-	   private float lerp(float weight, float a, float b) {
-	      float result = a + weight * (b - a);
+	   private double lerp(double weight, double a, double b) {
+	      double result = a + weight * (b - a);
 	      return result;
 	   }
 	   
@@ -104,7 +105,7 @@ public class PerlinNoise {
 	    * Example: dot product between (a, b) and (c, d) is:
 	    * a * c + b * d
 	    */
-	   private float dot(vec2 v0, vec2 v1) {
+	   private double dot(vec2 v0, vec2 v1) {
 	      return (v0.x * v1.x) + (v0.y * v1.y);
 	   }
 
@@ -119,22 +120,22 @@ public class PerlinNoise {
 	      return values[x + y * width];
 	   }
 
-	   public BufferedImage generate(int width, int height, int size) {
+	   public WritableImage generate(int width, int height, int size) {
 
-	      BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB); // Image to store pixel data in.
-
+	      WritableImage image = new WritableImage(width, height); // Image to store pixel data in.
+	      PixelWriter writer = image.getPixelWriter();
+	      
 	      for (int y = 0; y < height; y ++) {
 	         for (int x = 0; x < width; x ++) {
 	            
-	            float xx = (float) x / width * size; // Where does the point lie in the noise space according to image space. 
-	            float yy = (float) y / height * size; // Where does the point lie in the noise space according to image space. 
+	            double xx = (double) x / width * size; // Where does the point lie in the noise space according to image space. 
+	            double yy = (double) y / height * size; // Where does the point lie in the noise space according to image space. 
 	            
-	            float n = this.noise(xx, yy); // Noise values from Perlin's noise.
-	            int col = (int) ((n + 1) * 255 / 2f); // Since noise value returned is -1 to 1, we make it so that -1 is black, and 1 is white.
+	            double n = this.noise(xx, yy); // Noise values from Perlin's noise.
+	            double col = (n + 1.0)/2.0;
 	            
-	            Color color = new Color(col, col, col); // java.AWT color to get RGB from.
-	            image.setRGB(x, y, color.getRGB()); // set XY image value to our generated color.
-	            
+	            Color color = new Color(col, col, col, 1.0); // java.AWT color to get RGB from.
+	            writer.setColor(x, y, color); // set XY image value to our generated color.
 	         }
 	      }
 	      
@@ -143,14 +144,14 @@ public class PerlinNoise {
 	   
 	   public static class vec2 {
 
-	      public float x, y;
+	      public double x, y;
 
 	      /**
-	       * Just holds some float values.
+	       * Just holds some double values.
 	       * @param x
 	       * @param y
 	       */
-	      public vec2(float x, float y) {
+	      public vec2(double x, double y) {
 	         this.x = x;
 	         this.y = y;
 	      }
@@ -173,15 +174,15 @@ public class PerlinNoise {
 	       * @param rotation - how many degrees to rotate.
 	       * @return a new point, which was created by rotating given point around pivot by some degrees.
 	       */
-	      public static vec2 point(vec2 pivot, vec2 point, float rotation) {
+	      public static vec2 point(vec2 pivot, vec2 point, double rotation) {
 	         
-	         float rot = (float)(1f / 180 * rotation * Math.PI);
+	         double rot = (double)(1f / 180 * rotation * Math.PI);
 	         
-	         float x = point.x - pivot.x;
-	         float y = point.y - pivot.y;
+	         double x = point.x - pivot.x;
+	         double y = point.y - pivot.y;
 	         
-	         float newx = (float)(x * Math.cos(rot) - y * Math.sin(rot));
-	         float newy = (float)(x * Math.sin(rot) + y * Math.cos(rot));
+	         double newx = (double)(x * Math.cos(rot) - y * Math.sin(rot));
+	         double newy = (double)(x * Math.sin(rot) + y * Math.cos(rot));
 	         
 	         
 	         newx += pivot.x;

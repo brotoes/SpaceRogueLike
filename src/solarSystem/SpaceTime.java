@@ -1,6 +1,8 @@
-package game;
+package solarSystem;
 
 import java.util.ArrayList;
+
+import game.MassiveObject;
 import javafx.geometry.Point2D;
 
 public class SpaceTime {

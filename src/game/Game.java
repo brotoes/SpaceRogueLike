@@ -44,7 +44,7 @@ public class Game extends Application {
 		scene.addEventHandler(KEY_RELEASED, khandler);
 		
 		/* Set up Game */
-		World.generate("sol");
+		World.generate("sol2");
 		
 		/* Start Everything */
 		gloop.start();

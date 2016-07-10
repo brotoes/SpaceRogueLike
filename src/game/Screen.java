@@ -70,6 +70,9 @@ public class Screen {
 		camSubScene = new SubScene(camStackPane, width, height);
 		camSubScene.setCamera(camera);
 		
+		camera.setTranslateZ(-100);
+		camera.setFarClip(100000);
+		
 		/* Init HUD Pane */
 		hudPane = new AnchorPane();
 		hudPane.setMaxSize(width, height);

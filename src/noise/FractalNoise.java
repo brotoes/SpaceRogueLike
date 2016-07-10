@@ -1,13 +1,12 @@
-package game;
+package noise;
 
-import java.awt.image.BufferedImage;
-
+import javafx.scene.image.WritableImage;
 import utils.ImageUtils;
 
 public class FractalNoise {
-	public static BufferedImage generate(int width, int height, int freq) {
-		BufferedImage image = null;
-		BufferedImage newImage = null;
+	public WritableImage generate(int width, int height, int freq) {
+		WritableImage image = null;
+		WritableImage newImage = null;
 		PerlinNoise noise;
 		
 		while (freq > 1) {

@@ -6,6 +6,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import solarSystem.Planet;
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.scene.effect.Glow;
@@ -130,8 +131,8 @@ public class HUD {
 		g.clearRect(0, 0, sensorSize, sensorSize);
 		g.fillRect(0, 0, sensorSize, sensorSize);
 		
-		for (int i = 0; i < World.solarSystem.planets.size(); i ++) {
-			Planet planet = World.solarSystem.planets.get(i);
+		for (int i = 0; i < World.solarSystem.numPlanets(); i ++) {
+			Planet planet = World.solarSystem.getPlanet(i);
 			double drawRadius = planet.getRadius() * scaleFactor;
 			Point2D drawPos = planet.getPos().multiply(scaleFactor);
 			drawPos = drawPos.subtract(sensorPlayerPos);

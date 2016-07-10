@@ -3,6 +3,7 @@ package game;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import remotes.Player;
+import solarSystem.SolarSystem;
 
 import java.util.ArrayList;
 
@@ -55,18 +56,22 @@ public class World {
 	 * Spawn all instances into a new solar system
 	 */
 	private static void spawn() {
+		int startPlanet = 1;
 		/* Spawn all instances */
-		World.player = new Ship("WyvernShip", solarSystem.planets.get(3).getX(), solarSystem.planets.get(3).getY());
+		World.player = new Ship("WyvernShip", 
+				solarSystem.getPlanet(startPlanet).getX(),
+				solarSystem.getPlanet(startPlanet).getY());
 		World.player.setRemote(new Player(World.player));
-		for (int i = 1; i < solarSystem.planets.size(); i ++) {
+		for (int i = 1; i < solarSystem.numPlanets(); i ++) {
 			new FuelPlatform(
-					solarSystem.planets.get(i).getX() + 
-					solarSystem.planets.get(i).getRadius() + 100,
-					solarSystem.planets.get(i).getY());
+					solarSystem.getPlanet(i).getX() + 
+					solarSystem.getPlanet(i).getRadius() + 100,
+					solarSystem.getPlanet(i).getY());
 		}
 		new WarpGate(
-			solarSystem.planets.get(3).getX() - solarSystem.planets.get(3).getRadius() - 150,
-			solarSystem.planets.get(3).getY());
+			solarSystem.getPlanet(startPlanet).getX() - 
+				solarSystem.getPlanet(startPlanet).getRadius() - 150,
+			solarSystem.getPlanet(startPlanet).getY());
 	}
 	
 	public static void tick() {

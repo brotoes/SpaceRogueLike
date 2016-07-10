@@ -1,4 +1,4 @@
-package game;
+package solarSystem;
 
 import org.w3c.dom.*;
 import utils.FileUtils;
@@ -133,6 +133,14 @@ public class SolarSystem {
 			}
 			curX += radius + radius * 0.1;
 		}
+	}
+	
+	public Planet getPlanet(int index) {
+		return planets.get(index);
+	}
+	
+	public int numPlanets() {
+		return planets.size();
 	}
 	
 	public void tick() {

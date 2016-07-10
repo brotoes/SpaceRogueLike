@@ -5,6 +5,14 @@ import java.util.Random;
 import game.*;
 
 public class MathUtils {
+	/**
+	 * Maps x in range a-b to range c-d
+	 * @return
+	 */
+	public static double map(double x, double a, double b, double c, double d) {
+		return (x-a)/(b-a) * (d-c) + c;
+	}
+	
 	public static double[] linearCombination(double[] desiredVector, double[][] vectors, int vectorLength, int numVectors, boolean allowNegative) {
 		boolean[] usable = new boolean[numVectors];
 		double[][] usableMatrix = new double[numVectors][vectorLength];

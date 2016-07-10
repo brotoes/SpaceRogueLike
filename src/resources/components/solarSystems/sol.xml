@@ -39,17 +39,17 @@
 			<color>gray</color>
 			<secondaryColor>orange</secondaryColor>
 			<size>5823</size>
-			<ring>0</ring>
+			<ring>20</ring>
 		</planet><planet>
 			<name>Uranus</name>
 			<color>blue</color>
 			<secondaryColor>white</secondaryColor>
 			<size>2536</size>
+			<ring>80</ring>
 		</planet><planet>
 			<name>Neptune</name>
 			<color>blue</color>
 			<secondaryColor>black</secondaryColor>
 			<size>2462</size>
-			<ring>1</ring>
 		</planet></bodies>
 </system>
